@@ -185,9 +185,6 @@ class BinaryTree:
         root_diameter = self.height(root.left) + self.height(root.right)
         left_diameter = self.diameter(root.left)
         right_diameter = self.diameter(root.right)
-        # print('returns: {}'.format(max(root_diameter, max(left_diameter, right_diameter))))
-
-        # return max(left_h+right_h+1, max(left_d, right_d))-1
 
         return max(root_diameter, max(left_diameter, right_diameter))
 
@@ -227,7 +224,7 @@ class BinaryTree:
         else:
             if left_diameter > right_diameter: # 2-case
                 return self.longest_path(root.left)
-            else: # 3-case
+            else:# 3-case
                 return self.longest_path(root.right)
 
 
