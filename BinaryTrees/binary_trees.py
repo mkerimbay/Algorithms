@@ -244,45 +244,49 @@ class Solution:
 #   /                \
 #  2                  1
 
+def main():
+
+    tree = BinaryTree(3)
+    tree.root.left = Node(9)
+    tree.root.left.left = Node(8)
+    tree.root.left.left.left = Node(2)
+    tree.root.left.left.left.left = Node(2.1)
+    tree.root.left.left.left.left.left = Node(2.2)
+    tree.root.left.left.left.left.left.left = Node(2.3)
+    tree.root.left.left.left.left.left.left.left = Node(2.4)
 
 
-tree = BinaryTree(3)
-tree.root.left = Node(9)
-tree.root.left.left = Node(8)
-tree.root.left.left.left = Node(2)
-tree.root.left.left.left.left = Node(2.1)
-tree.root.left.left.left.left.left = Node(2.2)
-tree.root.left.left.left.left.left.left = Node(2.3)
-tree.root.left.left.left.left.left.left.left = Node(2.4)
+    tree.root.left.right = Node(11)
+    tree.root.left.right.left = Node(12)
+    tree.root.left.right.left.left = Node(13)
+    tree.root.left.right.left.left.left = Node(14)
+    tree.root.left.right.left.left.left.left = Node(25)
 
 
-tree.root.left.right = Node(11)
-tree.root.left.right.left = Node(12)
-tree.root.left.right.left.left = Node(13)
-tree.root.left.right.left.left.left = Node(14)
-tree.root.left.right.left.left.left.left = Node(25)
+    tree.root.right = Node(20)
+    tree.root.right.left = Node(15)
+    tree.root.right.right = Node(7)
+    tree.root.right.left.right = Node(1)
+
+    print(tree.preOrder_print(tree.root, ''))
+    print(tree.inOrder_print(tree.root, ''))
+    print(tree.postOrder_print(tree.root, ''))
+    print(tree.levelOrder_print(tree.root))
+    print(tree.reverse_levelOrder_print(tree.root))
+    print('height of tree: {}'.format(tree.height(tree.root)))
+    print('size of tree: {}'.format(tree.size(tree.root)))
+    print('is tree Unival: {}'.format(tree.isUnival(tree.root)))
+
+    anc = []
+    tree.find_ancestors(anc, tree.root, 15)
+    print(anc)
+
+    print(tree.diameter(tree.root))
+    print('longest path from root')
+    print(tree.longest_path_from_root(tree.root))
+    print('diameter path')
+    print(tree.diameter_path(tree.root))
 
 
-tree.root.right = Node(20)
-tree.root.right.left = Node(15)
-tree.root.right.right = Node(7)
-tree.root.right.left.right = Node(1)
-
-print(tree.preOrder_print(tree.root, ''))
-print(tree.inOrder_print(tree.root, ''))
-print(tree.postOrder_print(tree.root, ''))
-print(tree.levelOrder_print(tree.root))
-print(tree.reverse_levelOrder_print(tree.root))
-print('height of tree: {}'.format(tree.height(tree.root)))
-print('size of tree: {}'.format(tree.size(tree.root)))
-print('is tree Unival: {}'.format(tree.isUnival(tree.root)))
-
-anc = []
-tree.find_ancestors(anc, tree.root, 15)
-print(anc)
-
-print(tree.diameter(tree.root))
-print('longest path from root')
-print(tree.longest_path_from_root(tree.root))
-print('diameter path')
-print(tree.diameter_path(tree.root))
+if __name__ == '__main__':
+    main()
